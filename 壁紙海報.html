@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奥奇传说 - Ray 的专属资源合集 v2.0</title>
+    <style>
+        /* --- Google Fonts --- */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+        /* --- 全局样式设定 --- */
+        :root {
+            --primary-bg: #1a1e3e; /* 深邃的星空蓝紫色 */
+            --secondary-bg: #2a2f5a; /* 卡片和元素的背景色 */
+            --accent-color-1: #4d82f0; /* 主要的蓝色调，用于链接和按钮 */
+            --accent-color-2: #f0c44d; /* 金色点缀，用于标题等 */
+            --text-color-light: #e0e7ff; /* 主要文字颜色 */
+            --text-color-dark: #111; /* 深色文字，用于按钮等 */
+            --border-color: #4a508b; /* 边框颜色 */
+            --shadow-color: rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-color-light);
+            line-height: 1.8;
+            font-size: 16px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(77, 130, 240, 0.1), transparent 30%),
+                radial-gradient(circle at 85% 30%, rgba(240, 196, 77, 0.1), transparent 30%),
+                radial-gradient(circle at 50% 90%, rgba(74, 80, 139, 0.2), transparent 40%);
+        }
+
+        /* --- 主容器 --- */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--secondary-bg);
+            border-radius: 20px;
+            padding: 30px 40px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 10px 30px var(--shadow-color);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* --- 标题和介绍 --- */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: var(--accent-color-2);
+            font-weight: 700;
+            text-shadow: 0 0 10px var(--accent-color-2), 0 0 20px rgba(255, 223, 114, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--text-color-light);
+            font-weight: 400;
+        }
+
+        /* --- 资源卡片网格布局 --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- 单个资源卡片 --- */
+        .card {
+            background-color: var(--primary-bg);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* 卡片内元素间距 */
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(77, 130, 240, 0.3);
+            border-color: var(--accent-color-1);
+        }
+
+        .card h2 {
+            font-size: 1.5em;
+            color: var(--accent-color-2);
+            font-weight: 500;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 5px;
+        }
+
+        /* --- 链接样式 --- */
+        .link-block p, .code-block p {
+            margin: 0;
+            word-break: break-all;
+        }
+
+        .link-block a {
+            color: var(--accent-color-1);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .link-block a:hover {
+            color: #8bb3ff;
+            text-decoration: underline;
+            text-shadow: 0 0 5px rgba(139, 179, 255, 0.7);
+        }
+        
+        /* --- 提取码区域 --- */
+        .code-block {
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px dashed var(--border-color);
+        }
+
+        .code-block .code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--accent-color-2);
+            user-select: all; /* 方便手动选取 */
+        }
+        
+        /* --- 复制按钮 --- */
+        .copy-btn {
+            background-color: var(--accent-color-1);
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .copy-btn:hover {
+            background-color: #679aff;
+        }
+
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* --- 提示信息 --- */
+        .note {
+            font-size: 0.9em;
+            color: var(--text-color-light);
+            background-color: rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color-1);
+            margin-top: 10px;
+        }
+
+        /* --- 页脚 --- */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: 0.9em;
+            color: var(--text-color-light);
+            opacity: 0.7;
+        }
+        
+        /* --- 响应式设计 --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .grid-container {
+                grid-template-columns: 1fr; /* 手机上单栏显示 */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>奥奇传说</h1>
+            <p class="subtitle">高清4k立绘、海报、手机和电脑壁纸合集</p>
+        </header>
+
+        <div class="grid-container">
+            <div class="card">
+                <h2>立绘合集</h2>
+                <div class="link-block">
+                    <p>
+                        <a href="https://pan.baidu.com/s/1_EJMMlEhs9iR0h8HOyO6jg?pwd=eezf" target="_blank" rel="noopener noreferrer">
+                            https://pan.baidu.com/s/1_EJMMlEhs9iR0h8HOyO6jg?pwd=eezf
+                        </a>
+                    </p>
+                </div>
+                <div class="code-block">
+                    <p>提取码: <span class="code" id="code1">eezf</span></p>
+                    <button class="copy-btn" onclick="copyCode('code1', this)">复制</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>海报合集</h2>
+                <div class="link-block">
+                    <p>
+                        <a href="https://pan.baidu.com/s/1JZSSrPONBBQFW8WBUfN4oQ?pwd=yrdt" target="_blank" rel="noopener noreferrer">
+                            https://pan.baidu.com/s/1JZSSrPONBBQFW8WBUfN4oQ?pwd=yrdt
+                        </a>
+                    </p>
+                </div>
+                <div class="code-block">
+                    <p>提取码: <span class="code" id="code2">yrdt</span></p>
+                    <button class="copy-btn" onclick="copyCode('code2', this)">复制</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>电脑壁纸合集</h2>
+                <div class="link-block">
+                    <p>
+                        <a href="https://pan.baidu.com/s/1mLrNGNvIqy-IFLYlXivEYQ?pwd=n46v" target="_blank" rel="noopener noreferrer">
+                            https://pan.baidu.com/s/1mLrNGNvIqy-IFLYlXivEYQ?pwd=n46v
+                        </a>
+                    </p>
+                </div>
+                <div class="code-block">
+                    <p>提取码: <span class="code" id="code3">n46v</span></p>
+                    <button class="copy-btn" onclick="copyCode('code3', this)">复制</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>手机壁纸合集</h2>
+                <div class="link-block">
+                    <p>
+                        <a href="https://pan.baidu.com/s/1QTtcYNmu5nVfqgN3QF1daA?pwd=5fcn" target="_blank" rel="noopener noreferrer">
+                            https://pan.baidu.com/s/1QTtcYNmu5nVfqgN3QF1daA?pwd=5fcn
+                        </a>
+                    </p>
+                </div>
+                <div class="code-block">
+                    <p>提取码: <span class="code" id="code4">5fcn</span></p>
+                    <button class="copy-btn" onclick="copyCode('code4', this)">复制</button>
+                </div>
+                <div class="note">
+                    <p><strong>温馨提示：</strong> 手机壁纸资料夹中，档名有 "2700" 的是为曲面屏手机设计的喔！ </p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>页面由 小謎 为 Ray 专属制作 | 最后更新于 2025-06-13</p>
+            <p>如果链接失效，请记得联系原始分享者。</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCode(elementId, button) {
+            const codeElement = document.getElementById(elementId);
+            const textToCopy = codeElement.innerText;
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // 成功复制后的反馈
+                const originalText = button.innerText;
+                button.innerText = '复制成功!';
+                button.style.backgroundColor = '#28a745'; // 绿色表示成功
+
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.style.backgroundColor = 'var(--accent-color-1)'; // 恢复原色
+                }, 2000); // 2秒后恢复
+            }).catch(err => {
+                // 复制失败的反馈
+                console.error('无法复制文字: ', err);
+                const originalText = button.innerText;
+                button.innerText = '复制失败';
+                button.style.backgroundColor = '#dc3545'; // 红色表示失败
+
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.style.backgroundColor = 'var(--accent-color-1)';
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>
