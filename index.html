@@ -1,2 +1,157 @@
-<h1>Hello World!</h1>
-<p>This is a test from Ray's GitHub Pages.</p>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray 的個人主頁 - 導覽</title>
+    <meta name="description" content="歡迎來到 Ray 的個人網站！這裡你可以找到我的精選資源。">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"> 
+    <style>
+        /* 全局样式 */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: '微軟正黑體', 'Microsoft JhengHei', 'PingFang TC', 'Noto Sans TC', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f8f9fa; /* 淺灰背景 */
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #ffffff;
+            padding: 50px 60px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #007bff; /* 藍色主標題 */
+            font-size: 3.5em;
+            margin-bottom: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            border-bottom: 3px solid #e9ecef;
+            padding-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .navigation-links {
+            list-style: none;
+            padding: 0;
+            margin: 40px auto;
+        }
+
+        .navigation-links li {
+            margin-bottom: 20px;
+        }
+
+        .navigation-links a {
+            display: block;
+            background-color: #007bff; /* 藍色按鈕背景 */
+            color: white;
+            padding: 18px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,123,255,0.2);
+        }
+
+        .navigation-links a:hover {
+            background-color: #0056b3; /* 深藍色懸停 */
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,123,255,0.3);
+        }
+
+        .navigation-links a .icon {
+            margin-right: 15px;
+            font-size: 1.2em; /* 圖標大小 */
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px;
+            }
+            h1 {
+                font-size: 2.8em;
+            }
+            p {
+                font-size: 1.1em;
+            }
+            .navigation-links a {
+                font-size: 1.3em;
+                padding: 15px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .navigation-links a {
+                font-size: 1.1em;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>歡迎來到 Ray 的主頁！</h1>
+        <p>很高興你來到這裡！這個頁面是我的個人網站入口，你可以從這裡探索我的一些精選內容：</p>
+
+        <ul class="navigation-links">
+            <li>
+                <a href="壁紙海報.html">
+                    <span class="icon">🖼️</span> 我的收藏：壁紙與海報
+                </a>
+            </li>
+        </ul>
+        
+        <p class="footer">
+            <span style="font-size: 0.8em; color: #aaa;">—— Ray 的個人網站 © 2025</span>
+        </p>
+    </div>
+</body>
+</html>
